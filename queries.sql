@@ -32,7 +32,7 @@ values
 
 update Customers
 set PostalCode = 11122
-where CustomerName = 'Bilbo Baggins';
+where ContactName = 'Bilbo Baggins';
 
 -- (Stretch) Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted
 
