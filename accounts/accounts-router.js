@@ -23,7 +23,12 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        
+        const payload = {
+            name: req.body.name,
+            budget: req.body.budget
+        }
+        const [id] = await db('accounts').insert(payload)
+        res.json(await db('accounts').where('id', id).first())
     }
     catch (err) {
         next(err)
